@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppInfo.h"
 #import "AppCell.h"
+#import "NSString+path.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *apps;
@@ -39,9 +40,16 @@
         cell.app = app;
         if (self.imagecache[app.icon] != nil) {
             cell.imageView.image = self.imagecache[app.icon];
+            NSLog(@"从内存加载...");
             return cell;
         }
-
+    UIImage *image = [UIImage imageWithContentsOfFile:app.icon.appCacheDir];
+    if (image) {
+        [self.imagecache setObject:image forKey:app.icon];
+        cell.imageView.image = self.imagecache[app.icon];
+        NSLog(@"从沙盒加载....");
+        return cell;
+    }
     
     [self downloadImage:app indexPath:indexPath];
     
@@ -57,13 +65,16 @@
         NSLog(@"图片正在下载中...");
         NSURL *url = [NSURL URLWithString:app.icon];
         NSData *data = [NSData dataWithContentsOfURL:url];
+        if (data) {
+            
+            [data writeToFile:app.icon.appCacheDir atomically:YES];
+        }
         UIImage *image = [UIImage imageWithData:data];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             //                cell.iconView.image = image;
             [weakSelf.operationcache removeObjectForKey:app.icon];
 //            app.image = image;
             if (image != nil) {
-                
                 [self.imagecache setObject:image forKey:app.icon];
                 [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             }

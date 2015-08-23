@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA9798101B89B2FF00641C7F /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = AA97980F1B89B2FF00641C7F /* NSString+path.m */; };
 		AAC527871B88C1750010D8B7 /* AppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC527861B88C1750010D8B7 /* AppCell.m */; };
 		AADAFE181B8818A800BB67FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAFE171B8818A800BB67FD /* main.m */; };
 		AADAFE1B1B8818A800BB67FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAFE1A1B8818A800BB67FD /* AppDelegate.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA97980E1B89B2FF00641C7F /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
+		AA97980F1B89B2FF00641C7F /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 		AAC527851B88C1750010D8B7 /* AppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCell.h; sourceTree = "<group>"; };
 		AAC527861B88C1750010D8B7 /* AppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCell.m; sourceTree = "<group>"; };
 		AADAFE131B8818A800BB67FD /* 加载网络图片.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "加载网络图片.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +73,8 @@
 				AADAFE1A1B8818A800BB67FD /* AppDelegate.m */,
 				AADAFE1C1B8818A800BB67FD /* ViewController.h */,
 				AADAFE1D1B8818A800BB67FD /* ViewController.m */,
+				AA97980E1B89B2FF00641C7F /* NSString+path.h */,
+				AA97980F1B89B2FF00641C7F /* NSString+path.m */,
 				AAC527851B88C1750010D8B7 /* AppCell.h */,
 				AAC527861B88C1750010D8B7 /* AppCell.m */,
 				AADAFE2F1B88194200BB67FD /* AppInfo.h */,
@@ -168,6 +173,7 @@
 				AAC527871B88C1750010D8B7 /* AppCell.m in Sources */,
 				AADAFE311B88194200BB67FD /* AppInfo.m in Sources */,
 				AADAFE1B1B8818A800BB67FD /* AppDelegate.m in Sources */,
+				AA9798101B89B2FF00641C7F /* NSString+path.m in Sources */,
 				AADAFE181B8818A800BB67FD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
